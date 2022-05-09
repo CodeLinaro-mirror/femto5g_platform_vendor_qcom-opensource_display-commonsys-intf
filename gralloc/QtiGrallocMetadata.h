@@ -71,6 +71,8 @@
 // Early Notify line count
 #define QTI_EARLYNOTIFY_LINECOUNT 10026
 #define QTI_THREE_DIMENSIONAL_REF_INFO 10049
+#define QTI_CUSTOM_CONTENT_METADATA 10029
+
 // Used to indicate to framework that internal definitions are used instead
 #define COMPRESSION_QTI_UBWC 20001
 #define INTERLACED_QTI 20002

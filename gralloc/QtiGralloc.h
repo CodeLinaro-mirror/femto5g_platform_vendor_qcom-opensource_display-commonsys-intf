@@ -134,6 +134,8 @@ static const MetadataType MetadataType_ColorSpace = {VENDOR_QTI, QTI_COLORSPACE}
 static const MetadataType MetadataType_YuvPlaneInfo = {VENDOR_QTI, QTI_YUV_PLANE_INFO};
 static const MetadataType MetadataType_ThreeDimensionalRefInfo = {
     VENDOR_QTI, QTI_THREE_DIMENSIONAL_REF_INFO};
+static const MetadataType MetadataType_CustomContentMetadata = {VENDOR_QTI,
+                                                                QTI_CUSTOM_CONTENT_METADATA};
 // 0 is also used as invalid value in standard metadata
 static const MetadataType MetadataType_Invalid = {VENDOR_QTI, 0};
 
@@ -169,6 +171,8 @@ Error decodeYUVPlaneInfoMetadata(hidl_vec<uint8_t> &in, qti_ycbcr *out);
 Error encodeYUVPlaneInfoMetadata(qti_ycbcr *in, hidl_vec<uint8_t> *out);
 Error decodeThreeDimensionalRefInfo(hidl_vec<uint8_t> &in, ThreeDimensionalRefInfo *out);
 Error encodeThreeDimensionalRefInfo(ThreeDimensionalRefInfo &in,hidl_vec<uint8_t> *out);
+Error decodeCustomContentMetadata(hidl_vec<uint8_t> &in, void *out);
+Error encodeCustomContentMetadata(const void *in, hidl_vec<uint8_t> *out);
 }  // namespace qtigralloc
 
 #endif  //__QTIGRALLOC_H__

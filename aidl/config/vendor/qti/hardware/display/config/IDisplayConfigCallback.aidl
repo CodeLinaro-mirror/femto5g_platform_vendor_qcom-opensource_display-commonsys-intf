@@ -26,13 +26,19 @@
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
+/*
+ *  Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ *  + Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
+ *  + SPDX-License-Identifier: BSD-3-Clause-Clear
+ */
 package vendor.qti.hardware.display.config;
 
 import android.hardware.common.NativeHandle;
 import vendor.qti.hardware.display.config.CameraSmoothOp;
 import vendor.qti.hardware.display.config.Attributes;
 import vendor.qti.hardware.display.config.Concurrency;
+import vendor.qti.hardware.display.config.DisplayType;
+import vendor.qti.hardware.display.config.TUIEventType;
 
 @VintfStability
 interface IDisplayConfigCallback {
@@ -76,12 +82,23 @@ interface IDisplayConfigCallback {
      * @param attr Attributes of the new display resolution
      */
     oneway void notifyResolutionChange(in int displayId, in Attributes attr);
-     /*
-      * Send mitigated fps when new display concurrency added like primary + wfd
-      * @param displayId the display on which resolution switch is done
-      * @param attr Attributes of the new display resolution
-      * @param concurrency Concurrency for display
-      */
-      oneway void notifyFpsMitigation(in int displayId, in Attributes attr, in Concurrency
-                                      concurrency);
+
+    /*
+     * Send mitigated fps when new display concurrency added like primary + wfd
+     * @param displayId the display on which resolution switch is done
+     * @param attr Attributes of the new display resolution
+     * @param concurrency Concurrency for display
+     */
+    oneway void notifyFpsMitigation(in int displayId, in Attributes attr, in Concurrency
+                                    concurrency);
+
+    /*
+     * Send notification when TUI transition completes.
+     *
+     * @param error result of the TUI transition event
+     * @param displayId the display on which TUI transition is done
+     * @param eventType type of the TUI Transition
+     */
+    oneway void notifyTUIEventDone(in int error, in DisplayType disp_type,
+                                   in TUIEventType eventType);
 }

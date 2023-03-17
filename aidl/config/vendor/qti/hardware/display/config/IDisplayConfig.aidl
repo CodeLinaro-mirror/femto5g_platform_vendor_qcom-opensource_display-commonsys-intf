@@ -26,7 +26,11 @@
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
+/*
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ * + Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
+ * + SPDX-License-Identifier: BSD-3-Clause-Clear
+*/
 package vendor.qti.hardware.display.config;
 
 import android.hardware.common.NativeHandle;
@@ -556,4 +560,13 @@ interface IDisplayConfig {
      * @return error is NONE upon success
      */
     void notifyDisplayIdleState(in int[] dispId);
+
+    /*
+     * Notify client is up
+     *
+     * @param NONE
+     *
+     * @return error is NONE upon success
+     */
+    void setClientUp();
 }

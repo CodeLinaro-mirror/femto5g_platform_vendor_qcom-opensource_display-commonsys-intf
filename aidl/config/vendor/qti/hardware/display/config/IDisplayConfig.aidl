@@ -570,4 +570,12 @@ interface IDisplayConfig {
      * @return error is NONE upon success
      */
      void setClientUp();
+    /*
+     * Query the port ID for a given display ID.
+     *
+     * @param dispId display id
+     *
+     * @return display port ID
+     */
+    int getDisplayPortId(in int dispId);
 }

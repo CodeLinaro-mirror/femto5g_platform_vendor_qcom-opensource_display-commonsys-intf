@@ -26,6 +26,11 @@
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+/*
+ * Changes from Qualcomm Innovation Center are provided under the following license:
+ * Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
+*/
 
 package vendor.qti.hardware.display.config;
 
@@ -556,4 +561,13 @@ interface IDisplayConfig {
      * @return error is NONE upon success
      */
     void notifyDisplayIdleState(in int[] dispId);
+
+    /*
+     * Notify client is up
+     *
+     * @param NONE
+     *
+     * @return error is NONE upon success
+     */
+     void setClientUp();
 }

@@ -47,6 +47,7 @@ import vendor.qti.hardware.display.config.QsyncMode;
 import vendor.qti.hardware.display.config.Rect;
 import vendor.qti.hardware.display.config.TUIEventType;
 import vendor.qti.hardware.display.config.CameraSmoothOp;
+import vendor.qti.hardware.display.config.CacV2Config;
 
 @VintfStability
 interface IDisplayConfig {
@@ -578,4 +579,37 @@ interface IDisplayConfig {
      * @return display port ID
      */
     int getDisplayPortId(in int dispId);
+
+    /*
+     * Query if CAC V2 is supported on the display.
+     *
+     * @param dispId display ID
+     *
+     * @return true if supported, false otherwise
+     */
+    boolean isCacV2Supported(in int dispId);
+
+    /*
+     * Configure CAC V2 to HWC HAL for a given display ID
+     *
+     * @param dispId display ID
+     * @param config CAC configuration parameters
+     * @param enable control CAC enable/disable
+     *
+     * @return error is NONE upon success
+     */
+    void configureCacV2(in int dispId, in CacV2Config config, in boolean enable);
+
+    /*
+     * Configure CAC V2 to HWC HAL for a given display ID per eye
+     *
+     * @param dispId display ID
+     * @param leftconfig CAC configuration parameters for left eye
+     * @param rightconfig CAC configuration parameters for right eye
+     * @param enable control CAC enable/disable
+     *
+     * @return error is NONE upon success
+     */
+    void configureCacV2PerEye(in int dispId, in CacV2Config leftConfig, in CacV2Config rightConfig,
+                              in boolean enable);
 }

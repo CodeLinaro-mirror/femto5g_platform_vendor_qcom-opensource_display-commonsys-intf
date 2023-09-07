@@ -25,7 +25,11 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
+ *//*
+ * Changes from Qualcomm Innovation Center are provided under the following license:
+ * Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
+*/
 ///////////////////////////////////////////////////////////////////////////////
 // THIS FILE IS IMMUTABLE. DO NOT EDIT IN ANY CASE.                          //
 ///////////////////////////////////////////////////////////////////////////////
@@ -100,4 +104,9 @@ interface IDisplayConfig {
   long registerCallback(in vendor.qti.hardware.display.config.IDisplayConfigCallback callback);
   void unRegisterCallback(in long handle);
   void notifyDisplayIdleState(in int[] dispId);
+  void setClientUp();
+  int getDisplayPortId(in int dispId);
+  boolean isCacV2Supported(in int dispId);
+  void configureCacV2(in int dispId, in vendor.qti.hardware.display.config.CacV2Config config, in boolean enable);
+  void configureCacV2PerEye(in int dispId, in vendor.qti.hardware.display.config.CacV2Config leftConfig, in vendor.qti.hardware.display.config.CacV2Config rightConfig, in boolean enable);
 }

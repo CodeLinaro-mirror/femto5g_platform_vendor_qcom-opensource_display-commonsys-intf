@@ -25,6 +25,10 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *//*
+ * Changes from Qualcomm Innovation Center are provided under the following license:
+ * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 ///////////////////////////////////////////////////////////////////////////////
 // THIS FILE IS IMMUTABLE. DO NOT EDIT IN ANY CASE.                          //
@@ -53,4 +57,5 @@ interface IDisplayConfigCallback {
   oneway void notifyCameraSmoothInfo(in vendor.qti.hardware.display.config.CameraSmoothOp op, in int fps);
   oneway void notifyResolutionChange(in int displayId, in vendor.qti.hardware.display.config.Attributes attr);
   oneway void notifyFpsMitigation(in int displayId, in vendor.qti.hardware.display.config.Attributes attr, in vendor.qti.hardware.display.config.Concurrency concurrency);
+  oneway void notifyTUIEventDone(in int error, in vendor.qti.hardware.display.config.DisplayType disp_type, in vendor.qti.hardware.display.config.TUIEventType eventType);
 }

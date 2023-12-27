@@ -28,4 +28,7 @@ PRODUCT_PACKAGES += vendor.qti.hardware.display.allocator@1.0.vendor \
                     vendor.qti.hardware.display.config-V4-ndk_platform.vendor \
                     vendor.qti.hardware.display.config-V5-ndk_platform.vendor \
                     vendor.qti.hardware.display.config-V6-ndk_platform.vendor \
-                    vendor.qti.hardware.display.config-V7-ndk_platform.vendor
+                    vendor.qti.hardware.display.config-V7-ndk_platform.vendor \
+                    vendor.qti.hardware.display.config-V8-ndk_platform.vendor \
+                    vendor.qti.hardware.display.config-V9-ndk_platform.vendor \
+                    vendor.qti.hardware.display.config-V10-ndk_platform.vendor

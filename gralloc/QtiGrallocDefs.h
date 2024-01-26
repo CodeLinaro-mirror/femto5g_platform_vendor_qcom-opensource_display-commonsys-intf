@@ -25,6 +25,10 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Changes from Qualcomm Innovation Center are provided under the following license:
+ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
 #ifndef __QTIGRALLOCDEFS_H__
@@ -77,6 +81,8 @@
 /* This flag indicates video HW usage */
 #define GRALLOC_USAGE_PRIVATE_VIDEO_HW           1ULL << 52
 
+/* This flag indicates UBWC_NV124R format usage */
+#define GRALLOC_USAGE_PRIVATE_ALLOC_UBWC_4R      1ULL << 55
 
 // OEM specific HAL formats
 #define HAL_PIXEL_FORMAT_RGBA_5551 6

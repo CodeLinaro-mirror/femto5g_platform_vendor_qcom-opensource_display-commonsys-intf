@@ -29,7 +29,7 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * Changes from Qualcomm Innovation Center are provided under the following license:
- * Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
@@ -146,6 +146,8 @@ static const MetadataType MetadataType_CustomContentMetadata = {VENDOR_QTI,
                                                                 QTI_CUSTOM_CONTENT_METADATA};
 static const MetadataType MetadataType_BufferDequeueDuration = {VENDOR_QTI,
                                                                 QTI_BUFFER_DEQUEUE_DURATION};
+static const MetadataType MetadataType_BaseView = {VENDOR_QTI, QTI_BASE_VIEW};
+static const MetadataType MetadataType_MultiViewInfo = {VENDOR_QTI, QTI_MULTI_VIEW_INFO};
 
 // 0 is also used as invalid value in standard metadata
 static const MetadataType MetadataType_Invalid = {VENDOR_QTI, 0};

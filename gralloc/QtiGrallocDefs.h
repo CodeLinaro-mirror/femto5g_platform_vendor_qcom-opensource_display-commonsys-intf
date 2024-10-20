@@ -30,7 +30,7 @@
  */
 
 /*
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
@@ -98,6 +98,9 @@
 
 /* This flag is used to indicate UBWC - 2:1 compression ratio */
 #define GRALLOC_USAGE_PRIVATE_UBWC_L_2_TO_1      1ULL << 57
+
+/* This flag is used to indicate multiview use case */
+#define GRALLOC_USAGE_PRIVATE_MULTIVIEW          1ULL << 58
 
 // OEM specific HAL formats
 #define HAL_PIXEL_FORMAT_RGBA_5551 6

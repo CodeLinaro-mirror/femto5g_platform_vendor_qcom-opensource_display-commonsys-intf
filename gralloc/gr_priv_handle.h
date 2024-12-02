@@ -31,11 +31,11 @@
 #include <hardware/gralloc1.h>
 #ifdef __cplusplus
 #include <cinttypes>
+#include <array>
+#include <vector>
 #endif
 #include <fcntl.h>
 
-#include <array>
-#include <vector>
 
 #define GRALLOC1_FUNCTION_PERFORM 0x00001000
 

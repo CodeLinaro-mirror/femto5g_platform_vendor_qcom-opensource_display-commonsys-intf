@@ -30,7 +30,7 @@
 /*
 * Changes from Qualcomm Innovation Center are provided under the following license:
 *
-* Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+* Copyright (c) 2022, 2025 Qualcomm Innovation Center, Inc. All rights reserved.
 *
 * Redistribution and use in source and binary forms, with or without
 * modification, are permitted (subject to the limitations in the
@@ -139,6 +139,8 @@ struct MetaData_t {
   uint64_t reservedSize;
   VideoTimestampInfo videoTsInfo;
   int32_t videoEarlyNotifyLineCount;
+  /* Three Dimensional Reference Info is populated by*/
+  struct ThreeDimensionalRefInfo threeDimensionalRefInfo;
 };
 
 namespace qtigralloc {

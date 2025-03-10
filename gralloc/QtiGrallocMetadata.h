@@ -27,7 +27,7 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * Changes from Qualcomm Innovation Center are provided under the following license:
- * Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2022, 2025 Qualcomm Innovation Center, Inc. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
@@ -70,6 +70,7 @@
 #define QTI_YUV_PLANE_INFO 10025
 // Early Notify line count
 #define QTI_EARLYNOTIFY_LINECOUNT 10026
+#define QTI_THREE_DIMENSIONAL_REF_INFO 10049
 // Used to indicate to framework that internal definitions are used instead
 #define COMPRESSION_QTI_UBWC 20001
 #define INTERLACED_QTI 20002
@@ -173,6 +174,34 @@ struct VideoTimestampInfo {
   uint32_t frame_number;         /* Frame number/counter */
   int64_t frame_timestamp_us;    /* Frame timestamp in us */
 };
+
+// THREE_DIMEMSIONAL_REF_INFO Metadata
+
+#define NUM_REF_DISPLAYS 32
+typedef struct ThreeDimensionalRefDisplayInfo {
+  uint8_t left_view_id;
+  uint8_t right_view_id;
+  uint8_t exponent_ref_display_width;
+  uint8_t mantissa_ref_display_width;
+  uint8_t exponent_ref_viewing_distance;
+  // Valid only if ref_viewing_distance_flag is 1
+  uint8_t mantissa_ref_viewing_distance;
+  // Valid only if additional_shift_present_flag is 1
+  uint16_t num_sample_shift_plus512;
+  uint8_t additional_shift_present_flag;
+  uint8_t reserved[7]; // added for 64-bit alignment
+} ThreeDimensionalRefDisplayInfo;
+
+typedef struct ThreeDimensionalRefInfo {
+  uint8_t prec_ref_display_width;
+  uint8_t ref_viewing_distance_flag;
+  uint8_t prec_ref_viewing_dist; // Valid only if ref_viewing_distance_flag is 1
+  uint8_t num_ref_displays_minus1;
+  struct ThreeDimensionalRefDisplayInfo
+      threedRefDispInfo[NUM_REF_DISPLAYS];
+  uint8_t three_dimensional_reference_displays_extension_flag;
+  uint8_t reserved[3]; // added for 64-bit alignment
+} ThreeDimensionalRefInfo;
 
 #define RESERVED_REGION_SIZE 4096
 typedef struct ReservedRegion {

@@ -32,7 +32,7 @@
 /*
  * Changes from Qualcomm Innovation Center are provided under the following license:
  *
- * Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2022-2023, 2025 Qualcomm Innovation Center, Inc. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
@@ -119,6 +119,8 @@ struct MetaData_t {
   char heapName[MAX_NAME_LEN];
   /* Last buffer dequeue duration used by SmoMo to detect blocking */
   int64_t bufferDequeueDuration;
+    /* Three Dimensional Reference Info is populated by*/
+  struct ThreeDimensionalRefInfo threeDimensionalRefInfo;
 };
 
 namespace qtigralloc {

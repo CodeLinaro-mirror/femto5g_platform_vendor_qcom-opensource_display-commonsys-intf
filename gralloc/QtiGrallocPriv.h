@@ -141,6 +141,8 @@ struct MetaData_t {
   int32_t videoEarlyNotifyLineCount;
   /* Three Dimensional Reference Info is populated by*/
   struct ThreeDimensionalRefInfo threeDimensionalRefInfo;
+  /* View ID set by video*/
+  uint32_t viewId;
 };
 
 namespace qtigralloc {

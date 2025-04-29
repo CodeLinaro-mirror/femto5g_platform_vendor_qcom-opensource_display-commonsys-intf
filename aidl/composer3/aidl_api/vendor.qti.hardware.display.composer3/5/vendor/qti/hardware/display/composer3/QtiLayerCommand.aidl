@@ -28,4 +28,11 @@ parcelable QtiLayerCommand {
   vendor.qti.hardware.display.composer3.QtiLayerFlags qtiLayerFlags;
   @nullable vendor.qti.hardware.display.composer3.QtiPrivacyRegion[] qtiPrivacyRegions;
   @nullable vendor.qti.hardware.display.composer3.QtiCornerRadius qtiCornerRadius;
+  @nullable vendor.qti.hardware.display.composer3.QtiParcelableRenderLayerReferenceSpaceType qtiRenderLayerReferenceSpaceType;
+  @nullable vendor.qti.hardware.display.composer3.QtiParcelableCompositionLayerType qtiCompositionLayerType;
+  @nullable vendor.qti.hardware.display.composer3.QtiLayerPose qtiLayerPose;
+  @nullable vendor.qti.hardware.display.composer3.QtiLayerQuadSize qtiLayerQuadSize;
+  @nullable vendor.qti.hardware.display.composer3.QtiLayerFrustum qtiLayerFrustum;
+  @nullable vendor.qti.hardware.display.composer3.QtiLayerPlaneEquation qtiLayerPlaneEquation;
+  @nullable vendor.qti.hardware.display.composer3.QtiParcelableLayerVisibilityType qtiLayerVisibilityType;
 }

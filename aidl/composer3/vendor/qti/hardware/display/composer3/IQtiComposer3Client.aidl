@@ -8,6 +8,7 @@ import android.hardware.graphics.composer3.CommandResultPayload;
 import android.hardware.graphics.composer3.DisplayCommand;
 import vendor.qti.hardware.display.composer3.QtiDisplayCommand;
 import vendor.qti.hardware.display.composer3.QtiDrawMethod;
+import vendor.qti.hardware.display.composer3.QtiDisplayDeviceConfig;
 
 
 @VintfStability
@@ -24,4 +25,9 @@ interface IQtiComposer3Client {
     * Make the qti composer client try the provided QtiDrawMethod
     */
     void qtiTryDrawMethod(long display, QtiDrawMethod drawMethod);
+
+    /**
+     * Sets Display Device Config for this display.
+     */
+    void qtiSetDisplayDeviceConfig(long display, in QtiDisplayDeviceConfig displayDeviceConfig);
 }

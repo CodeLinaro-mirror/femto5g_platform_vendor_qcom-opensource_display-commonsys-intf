@@ -58,5 +58,4 @@ interface IDisplayConfigCallback {
   oneway void notifyResolutionChange(in int displayId, in vendor.qti.hardware.display.config.Attributes attr);
   oneway void notifyFpsMitigation(in int displayId, in vendor.qti.hardware.display.config.Attributes attr, in vendor.qti.hardware.display.config.Concurrency concurrency);
   oneway void notifyTUIEventDone(in int error, in vendor.qti.hardware.display.config.DisplayType disp_type, in vendor.qti.hardware.display.config.TUIEventType eventType);
-  oneway void notifyContentFps(in String name, in int fps);
 }

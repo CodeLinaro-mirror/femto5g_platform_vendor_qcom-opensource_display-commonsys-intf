@@ -112,8 +112,4 @@ interface IDisplayConfig {
   void configureCacV2ExtPerEye(in int dispId, in vendor.qti.hardware.display.config.CacV2ConfigExt leftConfig, in vendor.qti.hardware.display.config.CacV2ConfigExt rightConfig, in boolean enable);
   void allowIdleFallback();
   void setContentFps(in String name, in int fps);
-  int tunnellingInit();
-  int tunnellingDeinit();
-  int dequeueTunnelledBuffer(in android.hardware.common.NativeHandle buffer_handle, out android.hardware.common.NativeHandle release_fence_handle);
-  int queueTunnelledBuffer(in android.hardware.common.NativeHandle buffer_handle, in android.hardware.common.NativeHandle acquire_fence_handle);
 }

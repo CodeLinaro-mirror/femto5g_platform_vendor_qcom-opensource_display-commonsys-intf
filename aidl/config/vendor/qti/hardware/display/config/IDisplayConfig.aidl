@@ -26,7 +26,11 @@
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
+/*
+ *  Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ *  + Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
+ *  + SPDX-License-Identifier: BSD-3-Clause-Clear
+ */
 package vendor.qti.hardware.display.config;
 
 import android.hardware.common.NativeHandle;
@@ -42,6 +46,8 @@ import vendor.qti.hardware.display.config.QsyncMode;
 import vendor.qti.hardware.display.config.Rect;
 import vendor.qti.hardware.display.config.TUIEventType;
 import vendor.qti.hardware.display.config.CameraSmoothOp;
+import vendor.qti.hardware.display.config.CacV2Config;
+import vendor.qti.hardware.display.config.CacV2ConfigExt;
 
 @VintfStability
 interface IDisplayConfig {
@@ -556,4 +562,118 @@ interface IDisplayConfig {
      * @return error is NONE upon success
      */
     void notifyDisplayIdleState(in int[] dispId);
+
+    /*
+     * Notify client is up
+     *
+     * @param NONE
+     *
+     * @return error is NONE upon success
+     */
+    void setClientUp();
+
+    /*
+     * Query the port ID for a given display ID.
+     *
+     * @param dispId display id
+     *
+     * @return display port ID
+     */
+    int getDisplayPortId(in int dispId);
+
+    /*
+     * Query if CAC V2 is supported on the display.
+     *
+     * @param dispId display ID
+     *
+     * @return true if supported, false otherwise
+     */
+    boolean isCacV2Supported(in int dispId);
+
+    /*
+     * Configure CAC V2 to HWC HAL for a given display ID
+     *
+     * @param dispId display ID
+     * @param config CAC configuration parameters
+     * @param enable control CAC enable/disable
+     *
+     * @return error is NONE upon success
+     */
+    void configureCacV2(in int dispId, in CacV2Config config, in boolean enable);
+
+    /*
+     * Configure CAC V2 to HWC HAL for a given display ID per eye
+     *
+     * @param dispId display ID
+     * @param leftconfig CAC configuration parameters for left eye
+     * @param rightconfig CAC configuration parameters for right eye
+     * @param enable control CAC enable/disable
+     *
+     * @return error is NONE upon success
+     */
+    void configureCacV2PerEye(in int dispId, in CacV2Config leftConfig, in CacV2Config rightConfig,
+                              in boolean enable);
+
+    /*
+     * Configure CAC V2 to HWC HAL with the lens center offsets for a given display ID per eye
+     *
+     * @param dispId display ID
+     * @param leftconfig CAC configuration parameters for left eye
+     * @param rightconfig CAC configuration parameters for right eye
+     * @param enable control CAC enable/disable
+     *
+     * @return error is NONE upon success
+     */
+    void configureCacV2ExtPerEye(in int dispId, in CacV2ConfigExt leftConfig,
+                                 in CacV2ConfigExt rightConfig, in boolean enable);
+
+    /*
+     * Allow idle fallback
+     *
+     * @param NONE
+     *
+     * @return error is NONE upon success
+     */
+    void allowIdleFallback();
+
+    /*
+     * Set the App content fps
+     *
+     * @param name App package name
+     * @param fps App content fps
+     *
+     * @return error is NONE upon success
+     */
+    void setContentFps(in String name, in int fps);
+
+    /*
+     * call function to start tunnelling
+     * @return error as NONE if vendor.display.enable_tunnelling is set to true
+     * @return relevant error code otherwise
+    */
+    int tunnellingInit();
+
+    /*
+    *  deinit tunnelling
+    * @return error as NONE always
+    */
+    int tunnellingDeinit();
+
+    /*
+    * dequeue the buffer
+    *
+    * @return the release_fence_handle corresponding to the input buffer handle
+    * @return relevant error code if ion_fd is not present
+    */
+    int dequeueTunnelledBuffer(in NativeHandle buffer_handle,
+                               out NativeHandle release_fence_handle);
+
+    /*
+    * validate display and show the content of the buffer on screen
+    *
+    * @return error as NONE on success
+    * @return relevant error code otherwise
+    */
+    int queueTunnelledBuffer(in NativeHandle buffer_handle,
+                             in NativeHandle acquire_fence_handle);
 }

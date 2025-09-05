@@ -26,10 +26,10 @@
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *//*
- *  Changes from Qualcomm Technologies, Inc. are provided under the following license:
- *  + Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
- *  + SPDX-License-Identifier: BSD-3-Clause-Clear
- */
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ * + Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
+ * + SPDX-License-Identifier: BSD-3-Clause-Clear
+*/
 ///////////////////////////////////////////////////////////////////////////////
 // THIS FILE IS IMMUTABLE. DO NOT EDIT IN ANY CASE.                          //
 ///////////////////////////////////////////////////////////////////////////////
@@ -106,14 +106,4 @@ interface IDisplayConfig {
   void notifyDisplayIdleState(in int[] dispId);
   void setClientUp();
   int getDisplayPortId(in int dispId);
-  boolean isCacV2Supported(in int dispId);
-  void configureCacV2(in int dispId, in vendor.qti.hardware.display.config.CacV2Config config, in boolean enable);
-  void configureCacV2PerEye(in int dispId, in vendor.qti.hardware.display.config.CacV2Config leftConfig, in vendor.qti.hardware.display.config.CacV2Config rightConfig, in boolean enable);
-  void configureCacV2ExtPerEye(in int dispId, in vendor.qti.hardware.display.config.CacV2ConfigExt leftConfig, in vendor.qti.hardware.display.config.CacV2ConfigExt rightConfig, in boolean enable);
-  void allowIdleFallback();
-  void setContentFps(in String name, in int fps);
-  int tunnellingInit();
-  int tunnellingDeinit();
-  int dequeueTunnelledBuffer(in android.hardware.common.NativeHandle buffer_handle, out android.hardware.common.NativeHandle release_fence_handle);
-  int queueTunnelledBuffer(in android.hardware.common.NativeHandle buffer_handle, in android.hardware.common.NativeHandle acquire_fence_handle);
 }

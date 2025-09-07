@@ -282,7 +282,7 @@ struct private_handle_t : public native_handle_t {
   std::vector<FdPair> getFds();
   void closeFds();
   uint32_t getViewInfo();
-  private_handle_t* CreateViewHandle(uint32_t view);
+  private_handle_t *CreateViewHandle(uint32_t view, uint32_t view_in_handle);
 
   static private_handle_t *createSingleHandle(int fd, int meta_fd, int flags, int width_in_bytes,
                                               int height, int uw, int uh, int format, int buf_type,
@@ -622,7 +622,8 @@ inline void private_handle_t::Dump(private_handle_t *hnd) {
         hnd->layer_count(), hnd->reserved_size(), hnd->custom_content_md_reserved_size());
 }
 
-inline private_handle_t* private_handle_t::CreateViewHandle(uint32_t view) {
+inline private_handle_t *private_handle_t::CreateViewHandle(uint32_t view,
+                                                            uint32_t view_in_handle) {
   int N = getN();
 
   if (N > 2) {
@@ -665,6 +666,7 @@ inline private_handle_t* private_handle_t::CreateViewHandle(uint32_t view) {
                 F_DUPFD_CLOEXEC, 0);
       view_handle->getProperties(0) =
           static_cast<PvtHandleData<2>*>(this)->getProperties(view_index);
+      view_handle->propertiesArray[0].view = view_in_handle;
       break;
     default:
       ALOGE("Unsupported Meta Handle");

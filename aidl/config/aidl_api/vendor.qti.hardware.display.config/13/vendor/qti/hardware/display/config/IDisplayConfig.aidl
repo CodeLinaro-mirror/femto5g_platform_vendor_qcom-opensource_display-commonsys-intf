@@ -120,8 +120,4 @@ interface IDisplayConfig {
   void allowIdleFallback();
   void setContentFps(in String name, in int fps);
   void setCWBOutputBufferV2(in vendor.qti.hardware.display.config.IDisplayConfigCallback callback, in int dispId, in vendor.qti.hardware.display.config.Rect roiRect, in vendor.qti.hardware.display.config.Rect downscaleRect, in int cwbControlFlag, in android.hardware.common.NativeHandle buffer);
-  int tunnellingInit();
-  int tunnellingDeinit();
-  int dequeueTunnelledBuffer(in android.hardware.common.NativeHandle buffer_handle, out android.hardware.common.NativeHandle release_fence_handle);
-  int queueTunnelledBuffer(in android.hardware.common.NativeHandle buffer_handle, in android.hardware.common.NativeHandle acquire_fence_handle);
 }

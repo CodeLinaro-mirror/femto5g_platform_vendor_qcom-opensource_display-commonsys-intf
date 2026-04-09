@@ -1,0 +1,59 @@
+#!/usr/bin/make -f
+# debian/rules for display-commonsys-intf
+# Converted from Yocto recipe: display-commonsys-intf-linux_git.bb
+# CPPFLAGS from bb: -DTARGET_HEADLESS -DVENUS_COLOR_FORMAT -DPAGE_SIZE=4096
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	@echo "No configure step needed - header-only package"
+
+override_dh_auto_build:
+	@echo "No build step needed - header-only package"
+
+override_dh_auto_install:
+	# Install gralloc headers (from bb: install -m 644 ${S}/gralloc/*.h ${D}${includedir})
+	install -d $(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include
+	install -m 644 $(CURDIR)/gralloc/QtiGralloc.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/gralloc/QtiGrallocDefs.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/gralloc/QtiGrallocMetadata.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/gralloc/QtiGrallocPriv.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/gralloc/gr_priv_handle.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/gralloc/gralloc_priv.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	# Install include headers (from bb: install -m 644 ${S}/include/*.h ${D}${includedir})
+	install -m 644 $(CURDIR)/include/color_metadata.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/include/composer_extn_intf.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/include/display_color_processing.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/include/display_extn_intf.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/include/frame_extn_intf.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/include/frame_scheduler_intf.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/include/layer_extn_intf.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/include/phase_offset_extn_intf.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/include/smomo_config.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	install -m 644 $(CURDIR)/include/smomo_interface.h \
+		$(CURDIR)/debian/display-commonsys-intf-linux-dev/usr/include/
+	# Note: color_extensions.h is excluded (removed for gen5 target per bb recipe)
+	# Create empty dbg package directory
+	install -d $(CURDIR)/debian/display-commonsys-intf-linux-dbg
+
+override_dh_strip:
+	@echo "No strip needed - header-only package"
+
+override_dh_shlibdeps:
+	@echo "No shlibdeps needed - header-only package"

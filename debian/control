@@ -1,0 +1,24 @@
+Source: display-commonsys-intf
+Section: devel
+Priority: optional
+Maintainer: Wei Mo <wem@qti.qualcomm.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.0
+Homepage: https://git.codelinaro.org/
+
+Package: display-commonsys-intf-linux-dev
+Architecture: arm64
+Depends: ${misc:Depends}
+Recommends: libcutils-dev, liblog-dev, libutils-dev
+Description: display commonsys intf Library - Development files
+ Provide common display header files and libraries for other modules to
+ use. This package contains symbolic links, header files, and related
+ items necessary for software development.
+
+Package: display-commonsys-intf-linux-dbg
+Architecture: arm64
+Depends: ${misc:Depends}
+Description: display commonsys intf Library - Debugging files
+ Provide common display header files and libraries for other modules to
+ use. This package contains ELF symbols and related sources for debugging
+ purposes.

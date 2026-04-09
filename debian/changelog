@@ -1,0 +1,9 @@
+display-commonsys-intf (1.0.0) unstable; urgency=low
+
+  * Initial Debian packaging converted from Yocto recipe
+    display-commonsys-intf-linux_git.bb (PR=r3).
+  * Install display commonsys-intf header files from gralloc/ and include/.
+  * Split into -dev (header files) and -dbg (debug symbols) packages,
+    aligned with reference oryon-1 packaging.
+
+ -- Wei Mo <wem@qti.qualcomm.com>  Mon, 30 Mar 2026 00:00:00 +0000

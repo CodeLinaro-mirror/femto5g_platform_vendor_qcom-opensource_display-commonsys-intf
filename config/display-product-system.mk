@@ -18,6 +18,8 @@ PRODUCT_PACKAGES += vendor.display.config@1.0 \
                     vendor.qti.hardware.display.config-V12-ndk \
                     vendor.qti.hardware.display.config-V13-ndk \
                     vendor.qti.hardware.display.config-V14-ndk \
-                    vendor.qti.hardware.display.config-V15-ndk
+                    vendor.qti.hardware.display.config-V15-ndk \
+                    vendor.qti.hardware.display.config-V16-ndk \
+                    vendor.qti.hardware.display.config-V17-ndk
 
 $(call soong_config_set, qtidisplaycommonsysintf, multi_view_support, false)

@@ -21,10 +21,10 @@
 // later when a module using the interface is updated, e.g., Mainline modules.
 
 package vendor.qti.hardware.display.composer3;
-@VintfStability
-parcelable QtiPrivacyRegion {
-  float cornerRadius;
-  android.hardware.graphics.common.Rect rect;
-  int index;
-  boolean isDimming;
+@Backing(type="int") @VintfStability
+enum QtiLayerType {
+  UNKNOWN = 0,
+  APP = 1,
+  GAME = 2,
+  BROWSER = 3,
 }

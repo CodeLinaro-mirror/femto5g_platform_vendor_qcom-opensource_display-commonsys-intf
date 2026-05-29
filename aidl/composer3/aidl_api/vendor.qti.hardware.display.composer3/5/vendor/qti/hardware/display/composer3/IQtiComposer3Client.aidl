@@ -22,9 +22,7 @@
 
 package vendor.qti.hardware.display.composer3;
 @VintfStability
-parcelable QtiPrivacyRegion {
-  float cornerRadius;
-  android.hardware.graphics.common.Rect rect;
-  int index;
-  boolean isDimming;
+interface IQtiComposer3Client {
+  android.hardware.graphics.composer3.CommandResultPayload[] qtiExecuteCommands(in android.hardware.graphics.composer3.DisplayCommand[] commands, in vendor.qti.hardware.display.composer3.QtiDisplayCommand[] qtiCommands);
+  void qtiTryDrawMethod(long display, vendor.qti.hardware.display.composer3.QtiDrawMethod drawMethod);
 }

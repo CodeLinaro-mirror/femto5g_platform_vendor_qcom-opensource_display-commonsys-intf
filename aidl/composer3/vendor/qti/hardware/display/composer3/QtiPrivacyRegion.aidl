@@ -11,4 +11,5 @@ parcelable QtiPrivacyRegion {
     float cornerRadius;
     Rect rect;
     int index;
+    boolean isDimming;
 }

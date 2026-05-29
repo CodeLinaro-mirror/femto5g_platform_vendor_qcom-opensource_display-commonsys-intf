@@ -22,9 +22,7 @@
 
 package vendor.qti.hardware.display.composer3;
 @VintfStability
-parcelable QtiPrivacyRegion {
-  float cornerRadius;
-  android.hardware.graphics.common.Rect rect;
-  int index;
-  boolean isDimming;
+parcelable QtiCornerRadius {
+  float x;
+  float y;
 }

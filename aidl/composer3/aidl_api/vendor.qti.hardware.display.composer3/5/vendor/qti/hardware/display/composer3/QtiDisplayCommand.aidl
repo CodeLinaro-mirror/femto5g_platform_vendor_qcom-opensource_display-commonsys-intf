@@ -22,9 +22,9 @@
 
 package vendor.qti.hardware.display.composer3;
 @VintfStability
-parcelable QtiPrivacyRegion {
-  float cornerRadius;
-  android.hardware.graphics.common.Rect rect;
-  int index;
-  boolean isDimming;
+parcelable QtiDisplayCommand {
+  long display;
+  vendor.qti.hardware.display.composer3.QtiLayerCommand[] qtiLayers;
+  @nullable android.hardware.graphics.composer3.ClientTarget clientTarget_3_1;
+  long time;
 }

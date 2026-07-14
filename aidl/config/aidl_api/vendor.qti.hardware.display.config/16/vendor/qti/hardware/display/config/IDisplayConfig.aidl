@@ -126,5 +126,4 @@ interface IDisplayConfig {
   int queueTunnelledBuffer(in android.hardware.common.NativeHandle buffer_handle, in android.hardware.common.NativeHandle acquire_fence_handle);
   void setPoseConfig(in int dispId, in android.hardware.common.NativeHandle bufferHandle, in vendor.qti.hardware.display.config.PoseConfigType configType);
   void setHDRCapabilities(in vendor.qti.hardware.display.config.DisplayType dpy, in vendor.qti.hardware.display.config.HDRCapsParams caps);
-  void configureDynamicCacV2(in int dispId, in vendor.qti.hardware.display.config.DynamicCacV2Config config, in boolean enable);
 }

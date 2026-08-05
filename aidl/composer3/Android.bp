@@ -49,5 +49,5 @@ aidl_interface {
     ],
 
     owner: "qti",
-    frozen: true,
+    frozen: false,
 }

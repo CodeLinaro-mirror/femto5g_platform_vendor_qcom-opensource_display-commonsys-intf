@@ -1,3 +1,4 @@
+ifneq ($(TARGET_SDV_ENABLED),true)
 PRODUCT_PACKAGES += vendor.display.config@1.0 \
                     vendor.display.config@1.1 \
                     vendor.display.config@1.2 \
@@ -24,3 +25,4 @@ PRODUCT_PACKAGES += vendor.display.config@1.0 \
                     vendor.qti.hardware.display.config-V18-ndk \
                     vendor.qti.hardware.display.snapallocext-V1-ndk \
                     vendor.qti.hardware.qacs.ambientdatacapture-V1-ndk
+endif # TARGET_SDV_ENABLED
